@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run test suite
+        run: pytest tests/ -v
+      - name: Smoke-test the real running server
+        run: |
+          nohup python3 -m uvicorn src.api:app --host 0.0.0.0 --port 8020 &
+          sleep 3
+          curl -sf http://localhost:8020/health
+          curl -sf -X POST "http://localhost:8020/schedule/default?num_staff=15&num_days=7"
