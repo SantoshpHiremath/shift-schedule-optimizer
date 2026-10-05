@@ -6,9 +6,7 @@ Independent validator for a solved schedule. This does NOT trust the
 solver's claimed feasibility -- it walks the returned assignment dict
 and re-checks every hard constraint from scratch using plain Python,
 completely independent of the CP-SAT model. This is the same
-"independently re-verify, don't just trust the tool" discipline used
-throughout this project portfolio (e.g. re-verifying test results rather
-than trusting a first green run).
+"independently re-verify, don't just trust the tool" discipline.
 
 Returns a list of human-readable violation strings; an empty list means
 the schedule is genuinely valid.

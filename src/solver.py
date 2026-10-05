@@ -4,9 +4,8 @@ solver.py
 
 Constraint-programming solver for the SchedulingProblem, using Google
 OR-Tools' CP-SAT solver -- a real, industrial-strength constraint solver
-(the same class of tool -- constraint/integer programming -- that real
-rostering products like the posting's "ShiftPlan" are built on), not a
-hand-rolled heuristic.
+(constraint/integer programming, the same class of tool real rostering
+products are built on), not a hand-rolled heuristic.
 
 Decision variables: shift[(staff_id, day, shift_type)] -- a boolean,
 1 if that staff member works that shift on that day.
@@ -17,8 +16,7 @@ Hard constraints (must hold in any returned solution):
   3. Night-shift qualification: unqualified staff never assigned NIGHT.
   4. Minimum rest: no staff member works a LATE or NIGHT shift
      immediately followed by an EARLY shift the next day (a simplified
-     stand-in for the real Ruhezeiten/rest-period requirement named in
-     the posting).
+     stand-in for the real Ruhezeiten/rest-period requirement).
   5. Max consecutive working days (a rolling window constraint).
   6. Weekly max shifts, based on contract type (full-time vs part-time).
 

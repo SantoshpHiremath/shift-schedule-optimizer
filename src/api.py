@@ -2,9 +2,7 @@
 api.py
 ------
 
-FastAPI backend exposing the scheduling solver as an HTTP service --
-directly addressing the posting's "Backend-APIs in Python fuer unser
-Produkt ShiftPlan mitentwickeln und implementieren" responsibility.
+FastAPI backend exposing the scheduling solver as an HTTP service.
 
 Endpoints:
 

@@ -3,19 +3,16 @@ model.py
 --------
 
 Data model for a small, real nurse/staff rostering problem -- the
-scheduling domain this project targets (built to close a mathematical-
-optimization gap identified against Daphos's "ShiftPlan" posting, whose
-core ask is exactly this: the Nurse Rostering Problem, described in the
-posting itself as NP-hard).
+scheduling domain this project targets (the Nurse Rostering Problem, an
+NP-hard optimization problem).
 
-Kept intentionally small and honest: 3 shift types per day, a two-week
+Kept intentionally small: 3 shift types per day, a two-week
 horizon, and a handful of real, named constraints (minimum staffing,
 qualification requirements, one-shift-per-day, minimum rest between a
 closing and an opening shift, a maximum-consecutive-working-days cap,
 and a weekly max-hours cap derived from contract type) -- not a claim of
 covering the full German Arbeitszeitgesetz or a real hospital's actual
-staffing rules, which is a much larger and more legally complex problem
-than a single project could honestly claim to solve.
+staffing rules, which is a larger and more legally complex problem.
 """
 
 from __future__ import annotations

@@ -5,8 +5,8 @@ tests/test_solver.py
 Tests the CP-SAT solver against real constraint scenarios, always
 cross-checked with the independent validator (validate.py) rather than
 trusting the solver's own "OPTIMAL"/"FEASIBLE" status label alone --
-the same discipline used throughout this portfolio of not trusting a
-green result without independent re-verification.
+the same discipline of not trusting a green result without independent
+re-verification.
 """
 
 from src.model import ContractType, ShiftType, Staff, SchedulingProblem, build_default_problem
